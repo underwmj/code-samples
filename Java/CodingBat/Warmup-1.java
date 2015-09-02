@@ -86,11 +86,37 @@ public boolean makes10(int a, int b)
 }
 
 
-//nearHundred - Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) 
-//computes the absolute value of a number.
+//posNeg - Given 2 int values, return true if one is negative and one is positive. Except 
+//if the parameter "negative" is true, then return true only if both are negative.
 
-public boolean nearHundred(int n)
+public boolean posNeg(int a, int b, boolean negative)
 {
-    boolean within10 = false;
+   boolean bool = false;
+   
+   if( a < 0 && b < 0 )
+    if( negative )
+        bool = true;
+    else
+    if( (a < 0 && b > 0) || (a > 0 && b < 0) )
+        bool = true;
+    
+   return bool;
+}
+    
 
-    if( 
+//notString - Given a string, return a new string where "not" has been added to the front.
+//However, if the string already begins with "not", return the string unchanged. Note: use
+//.equals() to compare 2 string.
+
+public String notString (String str)
+{
+    if( str.matches("not\*" )
+        return str;
+    else
+        return "not " + str;
+}
+
+
+
+
+
