@@ -49,7 +49,7 @@ public String stringSplosion(String str)
 {
 	String splodedString = "";
 	
-	for(int ii = 0; ii <= str.length(); ii++)
+	for( int ii = 0; ii <= str.length(); ii++ )
 		splodedString += str.substring(0, ii);
 		
 	return splodedString;
@@ -57,6 +57,37 @@ public String stringSplosion(String str)
 
 
 //arrayCount9 - Given an array of ints, return the number of 9's in the array.
+
+public int arrayCount9(int[] nums)
 {
-	
+    int count = 0;
+
+    for( int ii = 0; ii < nums.length; ii++ )
+        if( nums[ii] == 9 )
+            count++;
+   
+    return count;
 }
+
+
+//arryFront9 - Given an array of ints, return true if one of the first 4 elements in the array
+//is a 9. The array length may be less than 4.
+
+public boolean arrayFront9(int[] nums) 
+{
+    int index = 0;
+    boolean has9 = false;
+
+    for( int ii = 0; ii < nums.length; ii++ )
+    {
+        if( index < 4 && nums[ii] == 9 )
+            has9 = true;
+
+        index ++;
+    }
+
+    return has9;
+}
+
+
+
